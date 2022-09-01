@@ -1,0 +1,55 @@
+.titulo{
+    font-family:Merriweather ;
+    font-weight: bolder;
+}
+
+.text{
+    font-family: Italic;
+    font-weight: bolder;
+}
+
+.img-title{
+    margin-top: 15px;
+}
+
+.img-toolbar{
+    padding: 10px;
+}
+
+.fondo{
+    height: 100vh;
+    background-image: url(../../../assets/imagen/Codigo_QR.svg.png);
+    text-align: center;
+    background-size: cover;
+}
+
+ion-card{
+    background:linear-gradient(#3880ff, #9198e5);
+    margin: 0 auto;
+    top: 5vh;
+    height: 90vh;
+    width: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.imagen-login{
+    width: 20%;
+}
+
+ion-item{
+    --background-color: none;
+
+}
+
+@media(max-width:420px){
+    .fondo{
+        ion.card{
+            width: 70%;
+        }
+    }
+}
+
+
