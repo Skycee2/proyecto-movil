@@ -8,12 +8,13 @@ export class UsuarioService {
   //CREAMOS LAS VARIABLES NECESARIAS DE TRABAJO:
   usuarios: any[] = [
     {
-      rut: '6.666.666-6',
-      nom_completo: 'Mister Satan',
-      fecha_nac : '1990-03-24',
-      semestre: 6,
+      rut: '11.111.111-1',
+      nom_completo: 'seba montero',
+      fecha_nac : '2000-03-30',
+      semestre: 3,
       password: 'diosito',
       tipo_usuario: 'administrador'
+
     }
   ];
 
@@ -34,13 +35,16 @@ export class UsuarioService {
       }
     });
   }
+
   actualizarUsuario(usuario){
     var index = this.usuarios.findIndex(usu => usu.rut == usuario.rut);
     this.usuarios[index] = usuario;
   }
+
   obtenerUsuario(rut: string){
     return this.usuarios.find(usu => usu.rut == rut);
   }
+
   obtenerUsuarios(){
     return this.usuarios;
   }

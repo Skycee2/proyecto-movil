@@ -1,56 +1,134 @@
-.titulo{
-    font-family:Merriweather ;
-    font-weight: bolder;
-    color: black;
+@use '../../../global.scss';
+
+
+.boton{
+    --border-radius: 100px;
 }
 
-.text{
-    font-family: Italic;
-    font-weight: bolder;
+#open-modal{
+    --border-radius: 100px;
+}
+
+ion-label{
+    --color:black;
 }
 
 .img-title{
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .img-toolbar{
     padding: 10px;
 }
 
-.fondo{
+.fondo {
     height: 100vh;
-    background-image: url(../../../assets/imagen/Codigo_QR.svg.png);
-    text-align: center;
+    background-image: url(../../../assets/imagen/fondoazul.jfif);
     background-size: cover;
+    text-align: center;
 }
 
-ion-card{
-    background:linear-gradient(#3880ff, #9198e5);
+ion-card {
+    --background: linear-gradient(#8BB8E8,  #DBE442);
     margin: 0 auto;
     top: 5vh;
     height: 90vh;
-    width: 50vh;
+    width: 50vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+
+    .imagen_login {
+        width: 50%;
+    }
+
+    ion-card-header {
+        ion-card-subtitle {
+            font-size: x-large;
+            //color: global.$color-primario;
+        }
+
+        ion-card-title {
+            font-size: x-large;
+           // color: global.$color-primario;
+        }
+    }
+
+    ion-item {
+        --background: none;
+
+        ion-label {
+            font-size: large;
+            font-weight: bold;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        font-size: large;
+        font-family: 'Courier New', Courier, monospace;
+        font-weight: bold;
+    }
 }
 
-.imagen-login{
-    width: 50%;
-}
 
-ion-item{
-    --background-color:none;
-    
-}
-
-@media(max-width:420vh){
-    .fondo{
-        ion-card{
-            --width: 80%;
+@media (max-width: 400px) {
+    .fondo {
+        ion-card {
+            width: 80vw;
         }
     }
 }
 
 
+
+////////////////////////////
+
+.titulo-login{
+    color: black;
+    font-family: Merriweather;
+    font-weight: bolder;
+    width: 100vh;
+}
+
+
+
+.boton-docente{
+    --border-radius: 100px;
+
+    top: 50vh;
+    
+}
+
+.boton-alumno{
+    --border-radius: 100px;
+    margin-top: 50px;
+    
+}
+
+
+ion-modal{
+    --background: linear-gradient(#8BB8E8,  #DBE442);
+}
+
+.top-modal{
+    --background: linear-gradient(#8BB8E8,  #e6e8c3);
+}
+
+.modal{
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    top: 55vh;
+    height: 50vh;
+}
+
+.titulo-modal{
+    font-size: large;
+    font-family: Merriweather;
+    font-weight: bolder;
+
+}

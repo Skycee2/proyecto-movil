@@ -8,13 +8,16 @@ import { RegistrarPageRoutingModule } from './registrar-routing.module';
 
 import { RegistrarPage } from './registrar.page';
 
+import { InputTrimModule } from 'ng2-trim-directive';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
     RegistrarPageRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InputTrimModule,
   ],
   declarations: [RegistrarPage]
 })

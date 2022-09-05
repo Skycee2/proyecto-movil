@@ -4,22 +4,20 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { LoginPageRoutingModule } from './login-routing.module';
+import { RegistrarDocentePageRoutingModule } from './registrar-docente-routing.module';
 
-import { LoginPage } from './login.page';
+import { RegistrarDocentePage } from './registrar-docente.page';
 
 import { InputTrimModule } from 'ng2-trim-directive';
-
-
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule,
+    RegistrarDocentePageRoutingModule,
     InputTrimModule,
   ],
-  declarations: [LoginPage]
+  declarations: [RegistrarDocentePage]
 })
-export class LoginPageModule {}
+export class RegistrarDocentePageModule {}

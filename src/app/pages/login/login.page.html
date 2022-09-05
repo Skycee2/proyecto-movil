@@ -1,44 +1,52 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <img class="img-toolbar" src="https://www.duoc.cl/wp-content/themes/wordpress-duoc-cl/images/logo-duoc.svg"
-      width="200" />
-  </ion-toolbar>
-</ion-header>
-
-
 <ion-content>
   <div class="fondo">
     <ion-card>
-      <div class="img-title ion-text-center">
-        <img class="imagen-login"
-          src="https://th.bing.com/th/id/R.e92ea9cb792063c04c773254ee4f4938?rik=ME3zHu%2bP2aOoAA&pid=ImgRaw&r=0"
-          width="170" />
-      </div>
+
+      <img class="imagen_login" src="../../../assets/imagen/img-login.png " alt="imagen_login" />
 
       <div>
         <ion-title class="ion-text-center">
-          <h1 class="titulo"> Iniciar sesión</h1>
+          <h1 class="titulo-login"> Iniciar sesión</h1>
         </ion-title>
       </div>
 
       <ion-item>
-        <ion-label class="text" position="stacked">Usuario:</ion-label>
-        <ion-input placeholder="Ingrese usuario" type="text" [(ngModel)]="user"></ion-input>
+        <ion-label color="dark" class="text-login" position="stacked">Correo electrónico:</ion-label>
+        <ion-input TRIM placeholder="Ingrese usuario" type="text" [(ngModel)]="user"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label class="text" position="stacked">Contraseña:</ion-label>
-        <ion-input placeholder="Ingrese contraseña" type="password" [(ngModel)]="password"></ion-input>
+        <ion-label color="dark" class="text-login" position="stacked">Contraseña:</ion-label>
+        <ion-input TRIM placeholder="Ingrese contraseña" type="password" [(ngModel)]="password"></ion-input>
       </ion-item>
 
       <ion-button class="boton" (click)="login()" color="warning">INGRESAR</ion-button>
-      <ion-button class="boton" routerLink="/registrar" color="warning">REGISTRAR</ion-button>
+      <ion-button id="open-modal"  color="warning">REGISTRAR</ion-button>
 
-      <ion-button routerLink="/recuperar-pass">
+      <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+        <ng-template>
+          <ion-header >
+            <ion-toolbar class="top-modal">
+              <ion-title  class="titulo-modal ion-text-center" >Bienvenidos</ion-title>
+            </ion-toolbar>
+          </ion-header>
+          <div class="modal">
+            <ion-button size="large" class="boton-docente">
+              DOCENTE
+            </ion-button>
+
+            <ion-button  size="large" color="warning" class="boton-alumno">
+              ALUMNO
+            </ion-button>
+          </div>
+          
+        </ng-template>
+      </ion-modal>
+
+      <ion-button class="boton" size="small" routerLink="/recuperar-pass">
         ¿Olvidaste tu contraseña?
       </ion-button>
     </ion-card>
-
 
   </div>
 </ion-content>

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 import { UsuarioService } from 'src/app/services/usuario.service';
+
+
 
 @Component({
   selector: 'app-registrar',
@@ -14,6 +17,7 @@ export class RegistrarPage implements OnInit {
   alumno = new FormGroup({
     rut: new FormControl('', [Validators.required, Validators.pattern('[0-9]{1,2}.[0-9]{3}.[0-9]{3}-[0-9kK]{1}')]),
     nom_completo: new FormControl('', [Validators.required, Validators.minLength(3)]),
+
     fecha_nac: new FormControl('', Validators.required),
     semestre: new FormControl('', [Validators.required, 
                                    Validators.min(1),
@@ -24,11 +28,12 @@ export class RegistrarPage implements OnInit {
     tipo_usuario: new FormControl('alumno')
   });
 
+
   //VAMOS A CREAR EL ARREGLO QUE TENDRA TODOS LOS USUARIOS REGISTRADOS DESDE EL SERVICIO:
   //usuarios: any[] = [];
   verificar_password: string;
 
-  constructor(private usuarioService: UsuarioService, private router: Router) { }
+  constructor(private usuarioService: UsuarioService, private router: Router, public alertController: AlertController) { }
 
   ngOnInit() {
     //this.usuarios = this.usuarioService.obtenerUsuarios();
@@ -42,9 +47,11 @@ export class RegistrarPage implements OnInit {
     }
     this.usuarioService.agregarUsuario(this.alumno.value);
     this.alumno.reset();
-    alert('USUARIO REGISTRADO!');
-
+    
     this.router.navigate(['/login']);
   }
+
+
+ 
 
 }
