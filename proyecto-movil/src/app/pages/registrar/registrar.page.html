@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title class="titulo-admin ion-text-center">REGISTRAR</ion-title>
+    <ion-button color="warning" slot="end" routerLink="/login">
+      <ion-icon name="log-in-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="fondo">
+
+    <ion-card>
+      <img src="../../../assets/imagen/2560px-Logo_DuocUC.svg.png" alt="" width="200px">
+
+      <img src="../../../assets/imagen/registrar-icon.png" alt="" width="100px">
+
+      <form [formGroup]="alumno" (ngSubmit)="registrar()">
+        <ion-item>
+          <ion-label color="dark" position="floating">Rut:</ion-label>
+          <ion-input TRIM type="text" placeholder="Ingrese rut" formControlName="rut"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="dark" position="floating">Nombre completo:</ion-label>
+          <ion-input TRIM type="text" placeholder="Ingrese nombre completo" formControlName="nom_completo"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="dark" position="floating">Correo electronico:</ion-label>
+          <ion-input TRIM type="text" placeholder="Ingrese correo" formControlName="correo"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="dark" position="floating">Fecha nacimiento:</ion-label>
+          <ion-input TRIM type="date" placeholder="Ingrese fecha de nacimiento" formControlName="fecha_nac"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="dark" position="stacked">Semestre:</ion-label>
+          <ion-input type="number" placeholder="Ingrese semestre" formControlName="semestre"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="dark" position="floating">Contraseña:</ion-label>
+          <ion-input TRIM type="password" placeholder="Ingrese contraseña" formControlName="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="dark" position="floating">Ingrese contraseña nuevamente:</ion-label>
+          <ion-input  TRIM type="password" placeholder="Ingrese contraseña nuevamente" [(ngModel)]="verificar_password"
+            [ngModelOptions]="{standalone: 'true'}"></ion-input>
+        </ion-item>
+        <ion-button class="boton" color="warning" type="submit" [disabled]="!alumno.valid">
+          REGISTRAR</ion-button>
+      </form>
+
+
+
+    </ion-card>
+  </div>
+</ion-content>

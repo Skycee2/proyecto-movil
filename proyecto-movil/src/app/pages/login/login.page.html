@@ -1,0 +1,34 @@
+<ion-content>
+  <div class="fondo">
+    <ion-card>
+      <img src="../../../assets/imagen/2560px-Logo_DuocUC.svg.png" alt="" width="500px">
+
+      <img class="imagen_login" src="../../../assets/imagen/img-login.png " alt="imagen_login"  />
+
+      <div>
+        <ion-title class="ion-text-center">
+          <h1 class="titulo-login"> Iniciar sesión</h1>
+        </ion-title>
+      </div>
+
+      <ion-item>
+        <ion-label color="dark" class="text-login" position="stacked">Rut usuario:</ion-label>
+        <ion-input TRIM placeholder="Ingrese usuario" type="text" [(ngModel)]="user"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="dark" class="text-login" position="stacked">Contraseña:</ion-label>
+        <ion-input TRIM placeholder="Ingrese contraseña" type="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+
+      <ion-button class="boton" (click)="login()" color="warning">INGRESAR</ion-button>
+      <ion-button class="boton" id="open-modal" routerLink="/registrar" color="warning">REGISTRAR</ion-button>
+
+
+      <ion-button class="boton" size="small" routerLink="/recuperar-pass">
+        ¿Olvidaste tu contraseña?
+      </ion-button>
+    </ion-card>
+
+  </div>
+</ion-content>
