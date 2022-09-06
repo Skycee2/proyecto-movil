@@ -17,7 +17,7 @@ export class RegistrarPage implements OnInit {
   alumno = new FormGroup({
     rut : new FormControl('', [Validators.required, Validators.pattern('[0-9]{1,2}.[0-9]{3}.[0-9]{3}-[0-9kK]{1}')]),
     nom_completo: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    //correo: new
+    correo: new FormControl('',[Validators.required, Validators.pattern('^[a-z0-9._%+-]+@duocuc.cl')]),
     fecha_nac: new FormControl('', Validators.required),
     semestre: new FormControl('', [Validators.required, Validators.min(1)]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),

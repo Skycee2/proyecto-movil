@@ -17,19 +17,31 @@ const routes: Routes = [
   },
   
   {
-    path: 'recuperar-pass',
-    loadChildren: () => import('./pages/recuperar-pass/recuperar-pass.module').then( m => m.RecuperarPassPageModule)
-  },
-  {
     path: 'docente',
     loadChildren: () => import('./pages/docente/docente.module').then( m => m.DocentePageModule)
   },
   {
     path: 'alumno',
     loadChildren: () => import('./pages/alumno/alumno.module').then( m => m.AlumnoPageModule)
-  },  {
+  },
+  {
     path: 'administrador',
     loadChildren: () => import('./pages/administrador/administrador.module').then( m => m.AdministradorPageModule)
+  },
+
+
+  {
+  path: 'recuperar-pass',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./pages/recuperar-pass/recuperar-pass.module').then( m => m.RecuperarPassPageModule)
+      },
+      {
+        path: ':rut',
+        loadChildren: () => import('./pages/recuperar-pass/modificar-pass/modificar-pass.module').then( m => m.ModificarPassPageModule)
+      }
+    ]
   },
 
 

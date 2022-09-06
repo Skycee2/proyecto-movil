@@ -12,7 +12,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 export class LoginPage implements OnInit {
 
   //vamos a crear variables:
-  correo: string;
+  user: string;
   password: string;
 
   constructor(private toastController: ToastController, private router: Router,
@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
 
   //vamos a crear un método:
   login(){
-    var usuarioLogin = this.usuarioService.validarRutPassword(this.correo, this.password);
+    var usuarioLogin = this.usuarioService.validarRutPassword(this.user, this.password);
 
     //validar que al ingresar admin admin en el formulario, me diga hola:
     if (usuarioLogin != undefined) {

@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { ToastController } from '@ionic/angular';
 import { UsuarioService } from 'src/app/services/usuario.service';
+import { Usuario } from 'src/app/usuario';
 
 
 
@@ -14,7 +15,7 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class ModificarPassPage implements OnInit {
 
-  usuario : UsuarioService
+  usuario : Usuario
   password: string;
   verificar_password: string;
 
@@ -22,7 +23,7 @@ export class ModificarPassPage implements OnInit {
 
   ngOnInit() {
     this.actRoute.paramMap.subscribe( paramMap => {
-      this.usuario = this.UsuarioService.obtenerUsuario(paramMap.get('id'))
+      this.usuario = this.UsuarioService.obtenerUsuario(paramMap.get('rut'))
     })  
   }
 

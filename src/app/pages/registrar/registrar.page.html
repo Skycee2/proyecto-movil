@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-title class="ion-text-center">Registrar</ion-title>
+  <ion-toolbar >
+    <ion-title class="titulo-admin ion-text-center">REGISTRAR</ion-title>
     <ion-button color="warning" slot="end" routerLink="/login">
       <ion-icon name="log-in-outline"></ion-icon>
     </ion-button>
@@ -24,6 +24,11 @@
         <ion-item>
           <ion-label color="dark" position="floating">Nombre completo:</ion-label>
           <ion-input TRIM type="text" placeholder="Ingrese nombre completo" formControlName="nom_completo"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label color="dark" position="floating">Correo electronico:</ion-label>
+          <ion-input TRIM type="text" placeholder="Ingrese correo" formControlName="correo"></ion-input>
         </ion-item>
 
         <ion-item>

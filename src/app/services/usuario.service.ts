@@ -14,14 +14,16 @@ export class UsuarioService {
     {
       rut: '11.111.111-1',
       nom_completo: 'Satan',
+      correo:'seb.montero@gmail.com' ,
       fecha_nac: '1990-03-24',
       semestre: 1,
       password: 'satan123',
       tipo_usuario: 'administrador'
     },
     {
-      rut: '11.111.111-2',
+      rut: '22.222.222-2',
       nom_completo: 'Satan',
+      correo:'seb.montero@duocuc.cl',
       fecha_nac: '1990-03-24',
       semestre: 1,
       password: 'satan123',
@@ -72,15 +74,15 @@ export class UsuarioService {
     return this.usuarios.find(u => u.rut == rut && u.password == pass);
   }
 
+
   cambiarPass(usuario, pass){
     var index = this.usuarios.findIndex(usu => usu.rut == usuario.rut);
-    usuario.pwd = pass;
-    console.log(usuario.pwd)
+    usuario.password = pass;
+    console.log(usuario.password)
     this.usuarios[index] = usuario;
     console.log(this.usuarios[index])
     return this.usuarios[index];
   }
-
 
   obtenerUserfromCorreo(correo: string){
     return this.usuarios.find(usu => usu.correo == correo);
