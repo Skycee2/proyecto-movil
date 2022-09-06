@@ -5,18 +5,30 @@ import { Injectable } from '@angular/core';
 })
 export class UsuarioService {
 
+  alumnos=[]
+
+
+
   //CREAMOS LAS VARIABLES NECESARIAS DE TRABAJO:
   usuarios: any[] = [
     {
       rut: '11.111.111-1',
-      nom_completo: 'seba montero',
-      fecha_nac : '2000-03-30',
-      semestre: 3,
-      password: 'diosito',
+      nom_completo: 'Satan',
+      fecha_nac: '1990-03-24',
+      semestre: 1,
+      password: 'satan123',
       tipo_usuario: 'administrador'
-
+    },
+    {
+      rut: '11.111.111-2',
+      nom_completo: 'Satan',
+      fecha_nac: '1990-03-24',
+      semestre: 1,
+      password: 'satan123',
+      tipo_usuario: 'alumno'
     }
   ];
+
 
   constructor() { }
 
@@ -36,7 +48,7 @@ export class UsuarioService {
     });
   }
 
-  actualizarUsuario(usuario){
+  modificarUsuario(usuario){
     var index = this.usuarios.findIndex(usu => usu.rut == usuario.rut);
     this.usuarios[index] = usuario;
   }
@@ -54,5 +66,24 @@ export class UsuarioService {
     return this.usuarios.find(usu => usu.rut == rut && usu.password == password);
   }
 
+  //MÉTODO CUSTOMER:
+  //validar rut y contraseña: método que recibe rut y password y me entrega un JSON de un usuario
+  validarRutPassword(rut, pass){
+    return this.usuarios.find(u => u.rut == rut && u.password == pass);
+  }
+
+  cambiarPass(usuario, pass){
+    var index = this.usuarios.findIndex(usu => usu.rut == usuario.rut);
+    usuario.pwd = pass;
+    console.log(usuario.pwd)
+    this.usuarios[index] = usuario;
+    console.log(this.usuarios[index])
+    return this.usuarios[index];
+  }
+
+
+  obtenerUserfromCorreo(correo: string){
+    return this.usuarios.find(usu => usu.correo == correo);
+  }
 
 }

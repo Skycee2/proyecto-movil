@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding ion-text-center">
+  <ion-item  lines="none" class="ion-text-center ion-text-custom">
+    <ion-label> {{ user.correo }}</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label color="duoc" class="pass-label"  position="floating">ingrese nueva contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="password"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="duoc" class="pass-label" position="floating">ingrese contraseña nuevamente</ion-label>
+    <ion-input type="password" [(ngModel)]="verificar_password"></ion-input>
+  </ion-item>
+  <ion-button  color="duoc" shape="round" expand="block" class="camb-buttom" (click)="cambiar()">cambiar</ion-button>
+  <ion-button  color="dark" shape="round" expand="block" class="cancel-buttom">cancelar</ion-button>
+
+</ion-content>
+

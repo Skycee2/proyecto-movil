@@ -10,7 +10,6 @@
 <ion-content>
   <div class="fondo">
     <ion-card>
-
       <form [formGroup]="alumno" (ngSubmit)="registrar()">
         <ion-item>
           <ion-label color="dark" position="floating">Rut:</ion-label>
@@ -22,11 +21,14 @@
           <ion-input TRIM type="text" placeholder="Ingrese nombre completo" formControlName="nom_completo"></ion-input>
         </ion-item>
 
-      
-
         <ion-item>
           <ion-label color="dark" position="floating">Fecha nacimiento:</ion-label>
           <ion-input TRIM type="date" placeholder="Ingrese fecha de nacimiento" formControlName="fecha_nac"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Semestre</ion-label>
+          <ion-input type="number" placeholder="Ingrese semestre" formControlName="semestre"></ion-input>
         </ion-item>
 
         <ion-item>

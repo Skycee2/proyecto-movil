@@ -35,36 +35,40 @@ export class AdministradorPage implements OnInit {
   }
 
   //método que desencadena el formulario con el boton submit:
-  registrar() {
+  registrar(){
     if (this.alumno.controls.password.value != this.verificar_password) {
       alert('CONTRASEÑAS NO COINCIDEN!');
       return;
     }
-
-    var respuesta: boolean = this.usuarioService.agregarUsuario(this.alumno.value);
-    if (respuesta) {
-      this.alumno.reset();
-      alert('USUARIO REGISTRADO!');
-    }else{
-      alert('USUARIO YA REGISTRADO!');
+    
+    var registrado: boolean = this.usuarioService.agregarUsuario(this.alumno.value);
+    if (!registrado) {
+      alert('USUARIO YA EXISTE!');
+      return;
     }
+
+    alert('ALUMNO REGISTRADO!');
+    this.alumno.reset();
+    this.verificar_password = '';
   }
 
-  eliminar(rutEliminar) {
+  eliminar(rutEliminar){
     this.usuarioService.eliminarUsuario(rutEliminar);
   }
 
-  buscar(rutBuscar) {
-    var usuarioEncontrado: any = this.usuarioService.obtenerUsuario(rutBuscar);
-    this.alumno.setValue(usuarioEncontrado);
-
-    this.verificar_password = usuarioEncontrado.password;
-    //this.verificar_password = this.alumno.controls.password.value;
+  buscar(rutBuscar){
+    var alumnoEncontrado = this.usuarioService.obtenerUsuario(rutBuscar);
+    this.alumno.setValue(alumnoEncontrado);
+    this.verificar_password = alumnoEncontrado.password;
   }
 
-  actualizar() {
+  modificar(){
     //console.log(this.alumno.value);
-    this.usuarioService.actualizarUsuario(this.alumno.value);
+    this.usuarioService.modificarUsuario(this.alumno.value);
+    this.limpiar();
+  }
+
+  limpiar(){
     this.alumno.reset();
     this.verificar_password = '';
   }

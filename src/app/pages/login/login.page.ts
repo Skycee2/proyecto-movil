@@ -3,8 +3,6 @@ import { ToastController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -24,12 +22,17 @@ export class LoginPage implements OnInit {
   }
 
   //vamos a crear un método:
-  login() {
-    var usuarioLogin = this.usuarioService.validarLogin(this.user, this.password);
+  login(){
+    var usuarioLogin = this.usuarioService.validarRutPassword(this.user, this.password);
 
+    //validar que al ingresar admin admin en el formulario, me diga hola:
     if (usuarioLogin != undefined) {
-      this.router.navigate(['/home']);
-    } else {
+      if (usuarioLogin.tipo_usuario == 'administrador') {
+        this.router.navigate(['/home']);
+      }else{
+        this.router.navigate(['/alumno']);
+      }
+    }else{
       this.toastError();
     }
   }

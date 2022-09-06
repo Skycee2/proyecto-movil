@@ -5,9 +5,7 @@
     --border-radius: 100px;
 }
 
-#open-modal{
-    --border-radius: 100px;
-}
+
 
 ion-label{
     --color:black;
@@ -108,27 +106,4 @@ ion-card {
 }
 
 
-ion-modal{
-    --background: linear-gradient(#8BB8E8,  #DBE442);
-}
 
-.top-modal{
-    --background: linear-gradient(#8BB8E8,  #e6e8c3);
-}
-
-.modal{
-    align-content: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    top: 55vh;
-    height: 50vh;
-}
-
-.titulo-modal{
-    font-size: large;
-    font-family: Merriweather;
-    font-weight: bolder;
-
-}

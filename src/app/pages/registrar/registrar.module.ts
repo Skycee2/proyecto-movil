@@ -22,3 +22,5 @@ import { InputTrimModule } from 'ng2-trim-directive';
   declarations: [RegistrarPage]
 })
 export class RegistrarPageModule {}
+
+

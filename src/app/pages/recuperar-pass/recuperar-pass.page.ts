@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-recuperar-pass',
   templateUrl: './recuperar-pass.page.html',
@@ -9,7 +10,11 @@ export class RecuperarPassPage implements OnInit {
 
   constructor() { }
 
+  correo: string;
+
   ngOnInit() {
   }
+
+
 
 }

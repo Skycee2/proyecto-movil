@@ -21,27 +21,8 @@
       </ion-item>
 
       <ion-button class="boton" (click)="login()" color="warning">INGRESAR</ion-button>
-      <ion-button id="open-modal"  color="warning">REGISTRAR</ion-button>
+      <ion-button class="boton" id="open-modal" routerLink="/registrar" color="warning">REGISTRAR</ion-button>
 
-      <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
-        <ng-template>
-          <ion-header >
-            <ion-toolbar class="top-modal">
-              <ion-title  class="titulo-modal ion-text-center" >Bienvenidos</ion-title>
-            </ion-toolbar>
-          </ion-header>
-          <div class="modal">
-            <ion-button size="large" class="boton-docente">
-              DOCENTE
-            </ion-button>
-
-            <ion-button  size="large" color="warning" class="boton-alumno">
-              ALUMNO
-            </ion-button>
-          </div>
-          
-        </ng-template>
-      </ion-modal>
 
       <ion-button class="boton" size="small" routerLink="/recuperar-pass">
         ¿Olvidaste tu contraseña?

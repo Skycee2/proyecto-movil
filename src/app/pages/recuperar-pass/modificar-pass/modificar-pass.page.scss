@@ -1,0 +1,35 @@
+.ion-color-duoc {
+	--ion-color-base: var(--ion-color-duoc);
+	--ion-color-base-rgb: var(--ion-color-duoc-rgb);
+	--ion-color-contrast: var(--ion-color-duoc-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-duoc-contrast-rgb);
+	--ion-color-shade: var(--ion-color-duoc-shade);
+	--ion-color-tint: var(--ion-color-duoc-tint);
+}
+
+.logo{
+    width: 200px;
+    margin-top: 50px;
+}
+.logo-cont{
+    display: flex;
+    justify-content: center;
+}
+
+.ion-text-custom{
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    font-family: Lato;
+}
+
+.pass-label{
+    font-size: 1rem;
+}
+
+.camb-buttom{
+    margin-top: 1.3rem;
+}
+
+.cancel-buttom{
+    margin-top: .7rem;
+}

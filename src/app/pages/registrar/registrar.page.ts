@@ -15,16 +15,12 @@ export class RegistrarPage implements OnInit {
 
   //VAMOS A CREAR NUESTRO ALUMNO:
   alumno = new FormGroup({
-    rut: new FormControl('', [Validators.required, Validators.pattern('[0-9]{1,2}.[0-9]{3}.[0-9]{3}-[0-9kK]{1}')]),
+    rut : new FormControl('', [Validators.required, Validators.pattern('[0-9]{1,2}.[0-9]{3}.[0-9]{3}-[0-9kK]{1}')]),
     nom_completo: new FormControl('', [Validators.required, Validators.minLength(3)]),
-
+    //correo: new
     fecha_nac: new FormControl('', Validators.required),
-    semestre: new FormControl('', [Validators.required, 
-                                   Validators.min(1),
-                                   Validators.max(8)]),
-    password: new FormControl('', [Validators.required, 
-                                   Validators.minLength(6),
-                                   Validators.maxLength(18)]),
+    semestre: new FormControl('', [Validators.required, Validators.min(1)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     tipo_usuario: new FormControl('alumno')
   });
 
@@ -33,22 +29,25 @@ export class RegistrarPage implements OnInit {
   //usuarios: any[] = [];
   verificar_password: string;
 
-  constructor(private usuarioService: UsuarioService, private router: Router, public alertController: AlertController) { }
+  constructor(private usuarioService: UsuarioService, private router: Router) { }
 
   ngOnInit() {
     //this.usuarios = this.usuarioService.obtenerUsuarios();
   }
 
   //método que desencadena el formulario con el boton submit:
+  
+
   registrar(){
     if (this.alumno.controls.password.value != this.verificar_password) {
       alert('CONTRASEÑAS NO COINCIDEN!');
       return;
     }
     this.usuarioService.agregarUsuario(this.alumno.value);
-    this.alumno.reset();
-    
+    alert('ALUMNO REGISTRADO!');
     this.router.navigate(['/login']);
+    this.alumno.reset();
+    this.verificar_password = '';
   }
 
 

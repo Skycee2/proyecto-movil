@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: RecuperarPassPage
+  },
+  {
+    path: 'modificar-pass',
+    loadChildren: () => import('./modificar-pass/modificar-pass.module').then( m => m.ModificarPassPageModule)
   }
 ];
 
