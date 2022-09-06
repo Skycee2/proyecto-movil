@@ -8,14 +8,15 @@
 <ion-content class="">
   <div class="fondo-recuperar-pass">
   <ion-card>
-    <img class="imagen_login" src="../../../assets/imagen/candado2.png " />
+    <img src="../../../assets/imagen/2560px-Logo_DuocUC.svg.png" alt="" width="500px">
+    <img class="imagen_login" src="../../../assets/imagen/candado2.png " width="200px" />
 
     <ion-item lines="none" class="ion-text-center ion-text-custom">
       <ion-label>Recuperar contraseña</ion-label>
     </ion-item>
     <ion-item>
       <ion-label color="dark" class="email-label" position="floating">Correo :</ion-label>
-      <ion-input placeholder="aaa.aaaa@duocuc.cl" inputmode="email" [(ngModel)]="correo"></ion-input>
+      <ion-input placeholder="aaa.aaaaa@duocuc.cl" inputmode="email" [(ngModel)]="correo"></ion-input>
     </ion-item>
     <ion-button class="boton" (click)="modificarPass()"  color="warning">
       Recuperar contraseña
